@@ -1,0 +1,6 @@
+! check iPhone Jens
+dom.GetObject("CUxD.CUX2801001:1.CMD_EXEC").State("cd /usr/local/addons/homematicIPState && tclsh ping.tcl '192.168.1.4' 'Airport Ankleidezimmer'");
+dom.GetObject("CUxD.CUX2801001:1.CMD_EXEC").State("cd /usr/local/addons/homematicIPState && tclsh ping.tcl '192.168.1.5' 'Airport Küche'");
+
+dom.GetObject("CUxD.CUX2801001:1.CMD_EXEC").State("cd /usr/local/addons/homematicIPState && tclsh ping.tcl '192.168.1.10' 'iPhone Jens'");
+dom.GetObject("CUxD.CUX2801001:1.CMD_EXEC").State("cd /usr/local/addons/homematicIPState && tclsh ping.tcl '192.168.1.20' 'iPhone Katharina'");
