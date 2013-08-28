@@ -3,12 +3,11 @@ dom.GetObject("CUxD.CUX2801001:1.CMD_EXEC").State("cd /usr/local/addons/homemati
 
 ! Set system variable
 integer IPOccurence = dom.GetObject("IP Anwesenheit TS").Value();
-
-WriteLine(IPOccurence);
+integer IPOccurenceTS = IPOccurence.ToTime().ToInteger();
 
 integer timestamp = system.Date("%F %X").ToTime().ToInteger();
 
-if ( IPOccurence > timestamp - 1800 )
+if ( IPOccurenceTS > timestamp - 600 )
 {
     WriteLine("anwesend");
     dom.GetObject("IP Anwesenheit").State("1");
