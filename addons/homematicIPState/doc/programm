@@ -1,0 +1,19 @@
+! Check actual IP states
+dom.GetObject("CUxD.CUX2801001:1.CMD_EXEC").State("cd /usr/local/addons/homematicIPState && ./IPState.tcl");
+
+! Set system variable
+integer IPOccurence = dom.GetObject("IP Anwesenheit TS").Value();
+
+WriteLine(IPOccurence);
+
+integer timestamp = system.Date("%F %X").ToTime().ToInteger();
+
+if ( IPOccurence > timestamp - 1800 )
+{
+    WriteLine("anwesend");
+    dom.GetObject("IP Anwesenheit").State("1");
+}
+else {
+    WriteLine("nicht anwesend");
+    dom.GetObject("IP Anwesenheit").State("0");
+}
