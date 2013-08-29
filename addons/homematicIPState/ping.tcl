@@ -10,11 +10,8 @@ set host [lindex $argv 0]
 set sv [lindex $argv 1]
 
 # logs
-set fo [open "/usr/local/addons/homematicIPState/log.log" a]
-
-puts $fo "LOG:"
-puts $fo $host
-puts $fo $sv
+set date [exec date];
+set log [open "/usr/local/addons/homematicIPState/ping.log" a]
 
 puts "HOST: $host"
 puts "SV: $sv"
@@ -28,6 +25,8 @@ if {$status == 1} {
 } else {
     puts "Offline"
 }
+
+puts $log "$date : $host : $status"
 
 # set system variable
 set rega_cmd ""
