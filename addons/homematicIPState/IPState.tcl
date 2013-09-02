@@ -33,15 +33,15 @@ if {$lastOccurrence > [expr ($timestamp - $skip)] } {
 
 
 # logs
-set date [exec date];
-set log [open "/usr/local/addons/homematicIPState/IPState.log" a]
+#set date [exec date];
+#set log [open "/usr/local/addons/homematicIPState/IPState.log" a]
 
 # check all hosts
 foreach id [array names IPStatusHosts] {
     set status [pingCheck $IPStatusHosts($id)]
 
     puts "Host: $IPStatusHosts($id)"
-    puts $log "$date : $IPStatusHosts($id) : $status"
+    #puts $log "$date : $IPStatusHosts($id) : $status"
 
     # client is online => set sv status
     if {$status == 1} {
