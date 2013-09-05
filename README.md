@@ -82,13 +82,13 @@ dom.GetObject("CUxD.CUX2801001:1.CMD_EXEC").State("cd /usr/local/addons/homemati
 
 
 ####ping.tcl
-Dieses Programm überprüft die Verfügbarkeit einer <IP-Adresse> und setzt die <Systemvariabel> auf true/false
+Dieses Programm überprüft die Verfügbarkeit einer IP-Adresse und setzt die Systemvariabel auf true/false
 
 
 #####Systemvariabeln
  Name                     | Variablentyp| Werte                                   |Maßeinheit
 :-------------------------|:------------|:----------------------------------------|:-------
-<Systemvariabel>          |  Logikwert  |wahr = anwesend / falsch = nicht anwesend|
+Systemvariabel          |  Logikwert  |wahr = anwesend / falsch = nicht anwesend|
 
 #####Aufruf im homematic Programm:
 ```
