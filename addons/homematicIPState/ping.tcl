@@ -18,8 +18,6 @@ set sv [lindex $argv 1]
 
 set status [pingCheck $host]
 
-# client is online0
-
 if {$status == 1} {
     puts "Online"
 } else {

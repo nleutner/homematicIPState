@@ -15,7 +15,7 @@ source config.tcl
 
 set sv "IP Anwesenheit TS"
 # skip running is client has been seen X seconds ago
-set skip 1
+set skip 30
 
 set timestamp [exec date +%s];
 
@@ -24,8 +24,7 @@ set command ""
 append command "dom.GetObject('$sv').Value().ToTime().ToInteger();"
 set lastOccurrence [rega $command]
 
-# exit if last occurrence is less than $skip minutes ago
-
+# exit if last occurrence is less than $skip seconds ago
 if {$lastOccurrence > [expr ($timestamp - $skip)] } {
     puts skipping
     exit 1
