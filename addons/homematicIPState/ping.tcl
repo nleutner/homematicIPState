@@ -26,7 +26,7 @@ if {$status == 1} {
     puts "Offline"
 }
 
-puts $log "$date : $host : $status"
+# puts $log "$date : $host : $status"
 
 # set system variable
 set rega_cmd ""
