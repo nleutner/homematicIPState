@@ -18,6 +18,8 @@ set sv [lindex $argv 1]
 
 set status [pingCheck $host]
 
+# client is online0
+
 if {$status == 1} {
     puts "Online"
 } else {
@@ -31,4 +33,4 @@ set rega_cmd ""
 append rega_cmd "dom.GetObject('$sv').State('$status');"
 rega_script $rega_cmd
 
-exit
+exit 0;
